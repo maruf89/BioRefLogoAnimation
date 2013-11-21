@@ -12,7 +12,7 @@ container = q('.animation')
  * Store all the pieces in one place
  * @type {Object}
 ###
-pieces =    
+pieces =
     spinningCoin: q('.spinningCoin')
     dna: q('.dna')
     bLetter: q('.bLetter')
@@ -44,14 +44,6 @@ spinners = [pieces.spinningCoin, pieces.dna]
  * Initiate the animation by adding a start class to the animation container
 ###
 container.setAttribute('class', 'animation start')
-
-setTimeout ->
-    spinner.setAttribute('data-spin', 'true') for spinner in spinners
-, 2000
-
-setTimeout ->
-    pieces.rLetter.setAttribute('data-appear', 'true');
-, 4000
 
 setTimeout ->
     container.setAttribute('data-fade', 'true')

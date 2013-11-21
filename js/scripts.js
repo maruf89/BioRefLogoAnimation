@@ -55,20 +55,6 @@
   container.setAttribute('class', 'animation start');
 
   setTimeout(function() {
-    var spinner, _i, _len, _results;
-    _results = [];
-    for (_i = 0, _len = spinners.length; _i < _len; _i++) {
-      spinner = spinners[_i];
-      _results.push(spinner.setAttribute('data-spin', 'true'));
-    }
-    return _results;
-  }, 2000);
-
-  setTimeout(function() {
-    return pieces.rLetter.setAttribute('data-appear', 'true');
-  }, 4000);
-
-  setTimeout(function() {
     return container.setAttribute('data-fade', 'true');
   }, 6000);
 
