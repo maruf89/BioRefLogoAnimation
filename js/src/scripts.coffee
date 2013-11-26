@@ -46,5 +46,9 @@ spinners = [pieces.spinningCoin, pieces.dna]
 container.setAttribute('class', 'animation start')
 
 setTimeout ->
+    pieces.rLetter.setAttribute('data-appear', 'true')
+, 1150
+
+setTimeout ->
     container.setAttribute('data-fade', 'true')
-, 6000
+, 4000

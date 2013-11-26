@@ -4,6 +4,8 @@ $animationSize = 25px
 em(px, base = $baseFont)
     unit((px/base), 'em');
 
+
+
 body
     font-size $baseFont
     overflowY hidden
@@ -23,23 +25,16 @@ body
     height 100%
     position relative
 
+.background
 .piece
     position absolute
     left 0
     top 0
 
-    transition opacity 1.5s linear
-
     &,
     object
         width em(230.477)
         height em(284.934)
-
-@keyframes spin
-    0%
-        transform rotateY(360deg)
-    100%
-        transform rotateY(0deg)
 
 @keyframes appear
     0%
@@ -64,7 +59,7 @@ body
         font-size 40px
         left -2em
         top -3.5em
-    85%
+    50%
         opacity 0
         font-size 40px
         left -2em
@@ -78,13 +73,16 @@ body
 @keyframes typeAppear
     0%
         opacity 0
-    80%
+    75%
         opacity 0
     100%
         opacity 1
 
-.spinningCoin
-    transform rotateY(0)
+@keyframes fade
+    0%
+        opacity 1
+    100%
+        opacity 0
 
 .square
     display none
@@ -104,24 +102,21 @@ body
 .start
     .bLetter
         opacity 1
-        animation appear 1s cubic-bezier(.40, .20, .83, .20)
+        animation appear 1s ease-out
 
-    .spinningCoin
-    .dna
-        animation spin 1.25s linear 1.15s 2
-
-    .rLetter
+    .rLetter[data-appear]
         opacity 1
-        animation delayedAppear 3.35s cubic-bezier(.40, .20, .83, .20)
+        animation delayedAppear 1s ease-out
 
     .dna
     .type
         opacity 1
-        animation typeAppear linear 5.25s
+        animation typeAppear linear 3.25s
 
-.start[data-fade="true"]
+.start[data-fade]
     .piece
         opacity 0
+        animation fade linear 1.5s
 
     .background
         opacity 1

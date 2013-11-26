@@ -55,7 +55,11 @@
   container.setAttribute('class', 'animation start');
 
   setTimeout(function() {
+    return pieces.rLetter.setAttribute('data-appear', 'true');
+  }, 1150);
+
+  setTimeout(function() {
     return container.setAttribute('data-fade', 'true');
-  }, 6000);
+  }, 4000);
 
 }).call(this);
