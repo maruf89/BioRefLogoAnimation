@@ -20,7 +20,8 @@ module.exports = ( grunt ) ->
           use: [ 'nib' ]
           import: [ 'nib' ]
         files:
-          'css/style.css': "<%= config._stylus %>*.styl"
+          'css/style.css': "<%= config._stylus %>styles.styl"
+          'css/fallback.css': "<%= config._stylus %>fallback.styl"
 
     coffeelint:
       dist:
@@ -33,13 +34,10 @@ module.exports = ( grunt ) ->
       compileBare:
         options:
           sourceMap: true
-          join: true
-        expand:true
-        flatten:true
-        cwd: "<%= config._coffee %>"
-        src: [ '*.coffee' ]
-        dest: 'js/'
-        ext: '.js'
+        files: {
+          'js/scripts.js': "<%= config._coffee %>/scripts.coffee",
+          'js/fallback.js': "<%= config._coffee %>/fallback.coffee"
+        }
 
       concatenated:
         options:
@@ -71,10 +69,10 @@ module.exports = ( grunt ) ->
         tasks: [ 'stylus' ]
       coffee:
         files: [ "<%= config._coffee %>*.coffee" ]
-        tasks: [ 'coffee:concatenated', 'uglify:production' ]
+        tasks: [ 'coffee:compileBare', 'uglify:production' ]
 
-    grunt.registerTask 'default', ['stylus','coffee:concatenated' ,'watch']
-    grunt.registerTask 'production', ['stylus' ,'coffee:concatenated' ,'uglify:production']
+    grunt.registerTask 'default', ['stylus','coffee:compileBare' ,'watch']
+    grunt.registerTask 'production', ['stylus' ,'coffee:compileBare' ,'uglify:production']
 
 
 

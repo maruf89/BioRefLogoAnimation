@@ -1,0 +1,13 @@
+.bLetter img,.rLetter img{width:200%;margin:-50% 0 0 -50%;opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}
+.animation object{display:none !important}
+.piece{width:auto;height:auto}
+.spinningCoin{left:0;top:0}
+.dna{left:178.488px;top:137.336px;opacity:1;-ms-filter:none;filter:none;}
+.dna img{opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}
+.bLetter{left:39.548px;top:147.968px}
+.rLetter{left:235.993px;top:147.968px}
+.bLetter,.rLetter{opacity:1;-ms-filter:none;filter:none;}
+.type{left:34.943px;top:430.818px;}
+.type img{opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}
+.background{left:0;top:0;opacity:1;-ms-filter:none;filter:none;}
+.background img{opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}

@@ -1,13 +1,25 @@
-
-/**
- * A shorthand query function
- * @param  {String} selector an element target
- * @return {DOM Element}
-*/
-
-
 (function() {
   var all, container, pieces, q, spinners;
+
+  Modernizr.load({
+    test: Modernizr.svg,
+    nope: ['http://code.jquery.com/jquery-1.8.1.min.js', '/js/fallback.js', '/css/fallback.css']
+  });
+
+  /**  Quit early if animations not supported
+  */
+
+
+  if (!Modernizr.svg) {
+    return false;
+  }
+
+  /**
+   * A shorthand query function
+   * @param  {String} selector an element target
+   * @return {DOM Element}
+  */
+
 
   q = function(selector) {
     return document.querySelector(selector);
@@ -24,7 +36,7 @@
   pieces = {
     spinningCoin: q('.spinningCoin'),
     dna: q('.dna'),
-    bLetter: q('.bLetter'),
+    bLetter: q('.bLeter'),
     rLetter: q('.rLetter'),
     square: q('.square'),
     type: q('.type'),
@@ -52,14 +64,14 @@
   */
 
 
-  container.setAttribute('class', 'animation start');
-
   setTimeout(function() {
-    return pieces.rLetter.setAttribute('data-appear', 'true');
-  }, 1150);
-
-  setTimeout(function() {
-    return container.setAttribute('data-fade', 'true');
-  }, 4000);
+    container.setAttribute('class', 'animation start');
+    setTimeout(function() {
+      return pieces.rLetter.setAttribute('data-appear', 'true');
+    }, 1150);
+    return setTimeout(function() {
+      return container.setAttribute('data-fade', 'true');
+    }, 4000);
+  }, 10);
 
 }).call(this);
